@@ -9,6 +9,8 @@ import {
 	TilesModule
 } from 'carbon-components-angular';
 import { StarterHomeRoutingModule } from './starter-home-routing.module';
+import { StarterServiceService } from './starter-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	imports: [
@@ -17,8 +19,10 @@ import { StarterHomeRoutingModule } from './starter-home-routing.module';
 		GridModule,
 		ListModule,
 		TabsModule,
-		TilesModule
+		TilesModule,
+		HttpClientModule
 	],
+	providers:[StarterServiceService],
 	declarations: [StarterHomeComponent]
 })
 export class StarterHomeModule { }
