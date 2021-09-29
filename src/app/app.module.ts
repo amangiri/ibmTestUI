@@ -15,6 +15,7 @@ import { CatalogComponent } from './pages/catalog/catalog.component';
 import { DocsComponent } from './pages/docs/docs.component';
 import { SupportComponent } from './pages/support/support.component';
 import { Link1Component } from './pages/link1/link1.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -32,7 +33,8 @@ import { Link1Component } from './pages/link1/link1.component';
 		ReactiveFormsModule,
 		AppRoutingModule,
 		UIShellModule,
-		IconModule
+		IconModule,
+		HttpClientModule
 	],
 	bootstrap: [AppComponent]
 })

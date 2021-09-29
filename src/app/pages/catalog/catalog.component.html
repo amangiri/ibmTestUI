@@ -1,9 +1,77 @@
 <div>
-    <h3>Resturant</h3>
-    <form [formGroup]="orderFoodForm">
-        <div>
-            <label for="name">Person Name*</label>
-            <input type="text" name="" id="">
-        </div>
-    </form>
+	<h3 class="text-center">Punjabi Resturant</h3>
+	<form [formGroup]="orderFoodForm">
+		<div class="row pt-4">
+			<div class="col-md-4 offset-md-1">
+				<div class="form-group">
+					<label for="name">Person Name*</label>
+					<input class="form-control" type="text" formControlName="name" id="name" />
+				</div>
+			</div>
+			<div class="col-md-4 offset-md-1">
+				<div class="form-group">
+					<label for="name">Table No.*</label>
+					<input class="form-control" type="text" formControlName="tableNo" id="tableNo" />
+				</div>
+			</div>
+		</div>
+		<div class="row pt-4">
+			<div class="col-md-4 offset-md-1">
+				<div class="form-group">
+					<label for="name" class="pr-2">Select Food Type*</label>
+					<div class="form-check form-check-inline pl-4">
+						<input
+							class="form-check-input"
+							type="radio"
+							value="lunch"
+							formControlName="foodType"
+							id="lunch"
+						/>
+						<label class="form-check-label" for="lunch">Lunch</label>
+					</div>
+					<div class="form-check form-check-inline pl-2">
+						<input
+							class="form-check-input"
+							type="radio"
+							value="supper"
+							formControlName="foodType"
+							id="supper"
+						/>
+						<label class="form-check-label" for="supper">Supper</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 offset-md-1">
+				<div class="form-group">
+					<label for="name">Select Items*</label>
+					<select class="form-select" multiple size="3" formControlName="items">
+                        <option disabled selected>Open this select menu</option>
+                        <option value="Butter Chiken">Butter Chiken</option>
+                        <option value="Butter Paneer">Butter Paneer</option>
+                        <option value="Kadai Paneer">Kadai Paneer</option>
+                        <option value="Butter Masala">Butter Masala</option>
+                        <option value="Chole Bhature">Chole Bhature</option>
+                        <option value="Shahi Paneer">Shahi Paneer</option>
+                        <option value="Chiken Butter Masala">Chiken Butter Masala</option>
+                        <option value="Butter Naan">Butter Naan</option>
+                      </select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 offset-md-1">
+				<div class="form-group">
+					<button class="btn btn-primary" (click)="placeOrder()"
+                    [disabled]="orderFoodForm.invalid"
+                    >Place Order</button>
+				</div>
+			</div>
+		</div>
+	</form>
+    <div class="row pt-4">
+        <h5 class="text-success text-center" *ngIf="successMsg">{{successMsg}}</h5>
+        <h5 class="text-error  text-center" *ngIf="errorMsg">{{errorMsg}}</h5>
+    </div>
 </div>
+
+

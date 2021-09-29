@@ -11,7 +11,7 @@ const routes: Routes = [
 		loadChildren: () => import('./starter-home/starter-home.module').then(m => m.StarterHomeModule)
 	},
 	{
-		path: 'catalog',
+		path: 'order-food',
 		component: CatalogComponent
 	},
 	{
