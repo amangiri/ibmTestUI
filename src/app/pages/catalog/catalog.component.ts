@@ -40,7 +40,8 @@ export class CatalogComponent implements OnInit {
     this.errorMsg=null;
     this.appService.placeOrders(reqData).subscribe(data=>{
       // console.log(data);
-      this.successMsg=data.message
+      this.successMsg=data.message;
+      this.orderFoodForm.reset();
     },
     err=>{
       console.log(err);
